@@ -3,13 +3,14 @@ import { Form, Container } from 'react-bootstrap';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { tourTypes } from 'prop'
 
 
 const New = function () {
 
   const [inputs, setInputs] = useState({
     title: '',
-    content: '',
+    price: 'short',
     status: 'Available'
   });
 
