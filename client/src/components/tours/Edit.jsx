@@ -20,8 +20,8 @@ const Edit = function (props) {
 
   useEffect(() => {
     (async () => {
-      const blogResp = await Axios.get(`/api/blogs/${id}`);
-      if (blogResp.status === 200) setInputs(blogResp.data);
+      const toursResp = await Axios.get(`/api/tours/${id}`);
+      if (toursResp.status === 200) setInputs(toursResp.data);
     })();
   }, []);
 
@@ -29,20 +29,20 @@ const Edit = function (props) {
     event.preventDefault();
 
     try {
-      const resp = await Axios.post('/api/blogs/update', inputs);
+      const resp = await Axios.post('/api/tourss/update', inputs);
 
       if (resp.status === 200)  {
-        toast("The blog was updated successfully", {
+        toast("The tours was updated successfully", {
           type: toast.TYPE.SUCCESS
         });
         setRedirect(true);
       } else {
-        toast("There was an issue updating the blog", {
+        toast("There was an issue updating the tours", {
           type: toast.TYPE.ERROR
         });
       }
     } catch (error) {
-      toast("There was an issue updating the blog", {
+      toast("There was an issue updating the tours", {
         type: toast.TYPE.ERROR
       });
     }

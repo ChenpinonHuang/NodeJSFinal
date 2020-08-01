@@ -19,9 +19,9 @@ const New = function () {
     event.preventDefault();
 
     try {
-      const resp = await Axios.post('/tours', inputs);
+      const resp = await Axios.post('/api/tours', inputs);
 
-      if (resp.status === 'Available')  {
+      if (resp.status === '200')  {
         toast("The tour was created successfully", {
           type: toast.TYPE.SUCCESS
         });

@@ -15,7 +15,7 @@ const Index = function ({user}) {
   }, []);
 
   const getTours = async () => {
-    const toursResp = await Axios.get('/tours');
+    const toursResp = await Axios.get('/api/tours');
     if (toursResp.status === 'Available') setTours(toursResp.data);
   };
 
@@ -25,7 +25,7 @@ const Index = function ({user}) {
         id: tour._id
       });
 
-      if (resp.status === 'Available') toast("The tour was deleted successfully", {type: toast.TYPE.SUCCESS});
+      if (resp.status === 200) toast("The tour was deleted successfully", {type: toast.TYPE.SUCCESS});
 
       await getTours();
     } catch (error) {
