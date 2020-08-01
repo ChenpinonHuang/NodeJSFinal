@@ -3,14 +3,16 @@ import { Form, Container } from 'react-bootstrap';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { tourTypes } from 'prop'
+import { tourTypes } from ''
 
 
 const New = function () {
 
   const [inputs, setInputs] = useState({
-    title: '',
-    price: 'short',
+    destination: '',
+    tourTypes: '',
+    groupSize: '',
+    date: '',
     status: 'Available'
   });
 
@@ -63,11 +65,11 @@ const New = function () {
       <div>
         <Form onSubmit={handleSubmit}>
           <Form.Group>
-            <Form.Label>Title:</Form.Label>
+            <Form.Label>Destination:</Form.Label>
             <Form.Control
-              name="title"
+              name="destination"
               onChange={handleInputChange}
-              value={inputs.title}
+              value={inputs.destination}
             />
           </Form.Group>
 
